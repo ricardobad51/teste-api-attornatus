@@ -1,0 +1,16 @@
+package com.belemburitiricardo.api.repositories;
+
+import java.util.UUID;
+
+import org.springframework.data.repository.CrudRepository;
+import org.springframework.stereotype.Repository;
+
+import com.belemburitiricardo.api.dtos.PersonDTO;
+import com.belemburitiricardo.api.entities.Person;
+
+@Repository
+public interface PersonRepository extends CrudRepository<Person, UUID>{
+	
+	PersonDTO findByName(String name);
+
+}

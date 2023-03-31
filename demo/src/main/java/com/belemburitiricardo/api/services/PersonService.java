@@ -3,18 +3,14 @@ package com.belemburitiricardo.api.services;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.dao.DataIntegrityViolationException;
-import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
-
 import org.springframework.transaction.annotation.Transactional;
 
 import com.belemburitiricardo.api.dtos.PersonDTO;
 import com.belemburitiricardo.api.entities.Person;
 import com.belemburitiricardo.api.repositories.PersonRepository;
-import com.belemburitiricardo.api.services.exceptions.DataBaseException;
 import com.belemburitiricardo.api.services.exceptions.ResourceNotFoundException;
 
 import jakarta.persistence.EntityNotFoundException;
@@ -62,17 +58,5 @@ public class PersonService {
 			throw new ResourceNotFoundException("id not Found " + id);
 		}
 	}
-
-	public void delete(Long id) {
-		try {
-			personRepository.deleteById(id);
-		} catch (EmptyResultDataAccessException e) {
-			throw new ResourceNotFoundException("id not Found " + id);
-		} catch(DataIntegrityViolationException e) {
-			throw new DataBaseException("Integrity Violation");
-		}
-
-	}
-
 
 }

@@ -1,0 +1,37 @@
+INSERT INTO tb_person(name, birth_Date) VALUES ('Ricardo Belem', TIMESTAMP WITH TIME ZONE '1979-07-13T20:50:07.12345Z');
+INSERT INTO tb_person(name, birth_Date) VALUES ('Altuitino Bezerra', TIMESTAMP WITH TIME ZONE '1900-07-13T20:50:07.12345Z');
+INSERT INTO tb_person(name, birth_Date) VALUES ('Gusmão Gustavão', TIMESTAMP WITH TIME ZONE '2020-07-13T20:50:07.12345Z');
+
+INSERT INTO tb_product (public_Place, zip_Code, number, city, principal) 
+VALUES ('The Lord of the Rings', '75025-253', 2, 'Goiania', true)
+
+INSERT INTO tb_product (public_Place, zip_Code, number, city, principal) 
+VALUES ('quem', '75025-253', 3, 'Anapolis', true)
+
+INSERT INTO tb_product (public_Place, zip_Code, number, city, principal) 
+VALUES ('como', '75025-253', 0, 'Jai', true)
+
+INSERT INTO tb_product (public_Place, zip_Code, number, city, principal) 
+VALUES ('´pdekls ', '75025-253', 2, 'jaca', true)
+
+INSERT INTO tb_product (public_Place, zip_Code, number, city, principal) 
+VALUES ('dddddds', '75025-253', 2, 'quem', false)
+
+INSERT INTO tb_product (public_Place, zip_Code, number, city, principal) 
+VALUES ('sssssewwww', '75025-253', 2, 'Goiania', true)
+
+INSERT INTO tb_product (public_Place, zip_Code, number, city, principal) 
+VALUES ('2222  sss', '75025-253', 2, 'Jacao', false)
+
+INSERT INTO tb_product (public_Place, zip_Code, number, city, principal) 
+VALUES ('The Lord of the Rings', '75025-253', 2, 'Eita', true)
+
+
+
+INSERT INTO tb_address_person (address_id, person_id) VALUES (1, 2);
+INSERT INTO tb_address_person (address_id, person_id) VALUES (2, 1);
+INSERT INTO tb_address_person (address_id, person_id) VALUES (3, 2);
+INSERT INTO tb_address_person (address_id, person_id) VALUES (4, 3);
+INSERT INTO tb_address_person (address_id, person_id) VALUES (5, 3);
+INSERT INTO tb_address_person (address_id, person_id) VALUES (6, 2);
+INSERT INTO tb_address_person (address_id, person_id) VALUES (1, 1);

@@ -1,0 +1,4 @@
+INSERT INTO tb_person(name, birth_Date) VALUES ('Ricardo Belem', TIMESTAMP WITH TIME ZONE '1979-07-13T20:50:07.12345Z');
+INSERT INTO tb_person(name, birth_Date) VALUES ('Altuitino Bezerra', TIMESTAMP WITH TIME ZONE '1900-07-13T20:50:07.12345Z');
+INSERT INTO tb_person(name, birth_Date) VALUES ('Gusmão Gustavão', TIMESTAMP WITH TIME ZONE '2020-07-13T20:50:07.12345Z');
+

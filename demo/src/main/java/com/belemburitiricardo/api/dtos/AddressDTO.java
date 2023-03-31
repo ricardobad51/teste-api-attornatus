@@ -1,0 +1,101 @@
+package com.belemburitiricardo.api.dtos;
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+import com.belemburitiricardo.api.entities.Address;
+
+public class AddressDTO implements Serializable {
+	private static final long serialVersionUID = 1L;
+
+	private Long id;
+	private String publicPlace;
+	private String zipCode;
+	private Integer number;
+	private String city;
+	private boolean principal = false;
+
+	public AddressDTO() {
+		
+	}
+	
+	private List<PersonDTO> persons = new ArrayList<>();
+
+	public AddressDTO(Long id, String publicPlace, String zipCode, Integer number, String city, boolean principal) {
+		this.id = id;
+		this.publicPlace = publicPlace;
+		this.zipCode = zipCode;
+		this.number = number;
+		this.city = city;
+		this.principal = principal;
+	}
+
+	public AddressDTO(Address entity) {
+		this.id = entity.getId();
+		this.publicPlace = entity.getPublicPlace();
+		this.zipCode = entity.getZipCode();
+		this.number = entity.getNumber();
+		this.city = entity.getCity();
+		this.principal = entity.isPrincipal();
+	}
+
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getPublicPlace() {
+		return publicPlace;
+	}
+
+	public void setPublicPlace(String publicPlace) {
+		this.publicPlace = publicPlace;
+	}
+
+	public String getZipCode() {
+		return zipCode;
+	}
+
+	public void setZipCode(String zipCode) {
+		this.zipCode = zipCode;
+	}
+
+	public Integer getNumber() {
+		return number;
+	}
+
+	public void setNumber(Integer number) {
+		this.number = number;
+	}
+
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+	public boolean isPrincipal() {
+		return principal;
+	}
+
+	public void setPrincipal(boolean principal) {
+		this.principal = principal;
+	}
+
+	public List<PersonDTO> getPersons() {
+		return persons;
+	}
+
+	public void setPersons(List<PersonDTO> persons) {
+		this.persons = persons;
+	}
+	
+	
+
+}

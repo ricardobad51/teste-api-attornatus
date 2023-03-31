@@ -1,0 +1,63 @@
+package com.belemburitiricardo.api.services;
+
+import java.util.Optional;
+
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
+
+import com.belemburitiricardo.api.dtos.AddressDTO;
+import com.belemburitiricardo.api.entities.Address;
+import com.belemburitiricardo.api.repositories.AddressRepository;
+import com.belemburitiricardo.api.services.exceptions.ResourceNotFoundException;
+
+import jakarta.persistence.EntityNotFoundException;
+
+@Service
+public class AddressService {
+	
+	@Autowired
+	private AddressRepository addressRepository;
+	
+	@Transactional(readOnly = true)
+	public Page<AddressDTO> findAllPaged(PageRequest pageRequest) {
+		Page<Address> list = addressRepository.findAll(pageRequest);
+
+		return list.map(x -> new AddressDTO(x));
+	}
+
+	@Transactional(readOnly = true)
+	public AddressDTO findById(Long id) {
+		Optional<Address> obj = addressRepository.findById(id);
+		Address entity = obj.orElseThrow(() -> new ResourceNotFoundException("Entity not Found"));
+
+		return new AddressDTO(entity);
+	}
+
+	@Transactional
+	public AddressDTO insert(AddressDTO dto) {
+		Address entity = new Address();
+		entity.setPublicPlace(dto.getPublicPlace());
+
+		entity = addressRepository.save(entity);
+
+		return new AddressDTO(entity);
+	}
+
+	@Transactional
+	public AddressDTO update(Long id, AddressDTO dto) {
+		try {
+			Address entity = addressRepository.getReferenceById(id);
+			entity.setPublicPlace(dto.getPublicPlace());
+			entity = addressRepository.save(entity);
+
+			return new AddressDTO(entity);
+		} catch (EntityNotFoundException e) {
+			throw new ResourceNotFoundException("id not Found " + id);
+		}
+	}
+
+
+}

@@ -1,0 +1,69 @@
+package com.belemburitiricardo.api.dtos;
+
+import java.io.Serializable;
+import java.time.Instant;
+
+import com.belemburitiricardo.api.entities.Address;
+import com.belemburitiricardo.api.entities.Person;
+
+import jakarta.persistence.Column;
+
+public class AddressDTO implements Serializable{
+	private static final long serialVersionUID = 1L;
+	
+	private Long id;
+private String publicPlace;
+	private String zipCode;
+	private Integer number;
+	private String city;
+	private boolean principal = false;
+	
+	
+	public AddressDTO() {
+		// TODO Auto-generated constructor stub
+	}{}
+	
+	public AddressDTO(Long id, String publicPlace, String zipCode,Integer number,String city, boolean principal) {
+		this.id = id;
+		this.publicPlace = publicPlace;
+		this.zipCode = zipCode;
+		this.number = number;
+		this.city = city;
+		this.principal = principal;
+	}
+	
+	public AddressDTO(Address entity) {
+		this.id = entity.getId();
+		this.publicPlace = entity.getPublicPlace();
+		this.zipCode = entity.getZipCode();
+		this.number = entity.getNumber();
+		this.city = entity.getCity();
+		this.principal = entity.get;
+	}
+
+	
+	public Long getId() {
+		return id;
+	}
+
+	public void setId(Long id) {
+		this.id = id;
+	}
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String name) {
+		this.name = name;
+	}
+
+	public Instant getBirthDate() {
+		return birthDate;
+	}
+
+	public void setBirthDate(Instant birthDate) {
+		this.birthDate = birthDate;
+	}
+
+}
