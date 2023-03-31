@@ -9,6 +9,5 @@ import com.belemburitiricardo.api.entities.Person;
 @Repository
 public interface PersonRepository extends JpaRepository<Person, Long>{
 	
-	PersonDTO findByName(String name);
 
 }

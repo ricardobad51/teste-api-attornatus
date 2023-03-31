@@ -1,44 +1,43 @@
 "# teste-api-attornatus"
-Usando Spring boot, crie uma API simples para gerenciar Pessoas. Esta API deve permitir:
 
-- Criar uma pessoa
+localhost:8080/address
 
-- Editar uma pessoa
+localhost:8080/persons
 
-- Consultar uma pessoa
+SQL
 
-- Listar pessoas
+INSERT INTO tb_person(name, birth_Date) VALUES ('Ricardo Belem', TIMESTAMP WITH TIME ZONE '1979-07-13T20:50:07.12345Z');
+INSERT INTO tb_person(name, birth_Date) VALUES ('Altuitino Bezerra', TIMESTAMP WITH TIME ZONE '1900-07-13T20:50:07.12345Z');
+INSERT INTO tb_person(name, birth_Date) VALUES ('Gusmão Gustavão', TIMESTAMP WITH TIME ZONE '2020-07-13T20:50:07.12345Z');
 
-- Criar endereço para pessoa
+INSERT INTO tb_address (public_Place, zip_Code, number, city, principal)
+VALUES ('The Lord of the Rings', '75025-253', 2, 'Goiania', true);
 
-- Listar endereços da pessoa
+INSERT INTO tb_address (public_Place, zip_Code, number, city, principal)
+VALUES ('quem', '75025-253', 3, 'Anapolis', true);
 
-- Poder informar qual endereço é o principal da pessoa
+INSERT INTO tb_address (public_Place, zip_Code, number, city, principal)
+VALUES ('como', '75025-253', 0, 'Jai', true);
 
-Uma Pessoa deve ter os seguintes campos:
+INSERT INTO tb_address (public_Place, zip_Code, number, city, principal)
+VALUES ('´pdekls ', '75025-253', 2, 'jaca', true);
 
-- Nome
+INSERT INTO tb_address (public_Place, zip_Code, number, city, principal)
+VALUES ('dddddds', '75025-253', 2, 'quem', false);
 
-- Data de nascimento
+INSERT INTO tb_address (public_Place, zip_Code, number, city, principal)
+VALUES ('sssssewwww', '75025-253', 2, 'Goiania', true);
 
-- Endereço:
+INSERT INTO tb_address (public_Place, zip_Code, number, city, principal)
+VALUES ('2222 sss', '75025-253', 2, 'Jacao', false);
 
-  -> Logradouro
+INSERT INTO tb_address (public_Place, zip_Code, number, city, principal)
+VALUES ('The Lord of the Rings', '75025-253', 2, 'Eita', true);
 
-  -> CEP
-
-  -> Número
-
-  -> Cidade
-
-Requisitos
-
-- Todas as respostas da API devem ser JSON
-
-- Banco de dados H2
-
-Diferencial
-
-- Testes
-
-- Clean Code
+INSERT INTO tb_address_person (address_id, person_id) VALUES (1, 2);
+INSERT INTO tb_address_person (address_id, person_id) VALUES (2, 1);
+INSERT INTO tb_address_person (address_id, person_id) VALUES (3, 2);
+INSERT INTO tb_address_person (address_id, person_id) VALUES (4, 3);
+INSERT INTO tb_address_person (address_id, person_id) VALUES (5, 3);
+INSERT INTO tb_address_person (address_id, person_id) VALUES (6, 2);
+INSERT INTO tb_address_person (address_id, person_id) VALUES (1, 1);
