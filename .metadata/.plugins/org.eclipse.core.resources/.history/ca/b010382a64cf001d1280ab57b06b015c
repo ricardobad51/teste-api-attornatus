@@ -1,0 +1,6 @@
+package com.belemburitiricardo.api.resources;
+
+
+public class PersonResource {
+
+}

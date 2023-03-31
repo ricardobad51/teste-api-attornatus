@@ -28,9 +28,11 @@ public class Person implements Serializable{
 	
 	public Person() {}
 	
-	public Person(Long id, String name) {
+	public Person(Long id, String name, Instant birthDate) {
 		this.id = id;
 		this.name = name;
+		this.birthDate = birthDate;
+		
 	}
 
 	public Long getId() {

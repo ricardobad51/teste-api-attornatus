@@ -1,0 +1,7 @@
+package com.belemburitiricardo.api.resources;
+
+@RestController
+@RequestMapping(value = "/persons")
+public class PersonResource {
+
+}
