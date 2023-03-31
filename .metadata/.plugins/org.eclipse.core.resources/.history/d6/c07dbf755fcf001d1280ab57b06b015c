@@ -1,0 +1,5 @@
+package com.belemburitiricardo.api.dtos;
+
+public class PersonDTO {
+
+}

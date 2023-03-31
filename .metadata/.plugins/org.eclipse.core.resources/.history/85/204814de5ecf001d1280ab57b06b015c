@@ -1,0 +1,5 @@
+package com.belemburitiricardo.api.repositories;
+
+public interface PersonRepository {
+
+}
